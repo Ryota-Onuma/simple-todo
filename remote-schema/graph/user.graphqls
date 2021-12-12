@@ -1,0 +1,22 @@
+scalar Time
+
+extend type Mutation {
+  createUser(input: NewUser!): UserCreateResponse
+}
+
+input NewUser {
+  name: String!
+}
+
+type UserCreateResponse {
+  isSuccess: Boolean!
+  Users: [RSUser]
+}
+
+type RSUser {
+  ID:         String
+	name:			 String
+	last_seen:		Time
+	created_at:		Time
+  updated_at:		Time
+}

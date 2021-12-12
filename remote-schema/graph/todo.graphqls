@@ -1,0 +1,25 @@
+
+extend type Mutation {
+  createTask(input: NewTask!): TaskCreateResponse
+}
+
+input NewTask {
+  title: String!
+  content: String
+  is_completed: Boolean
+}
+
+type TaskCreateResponse {
+  isSuccess: Boolean!
+  Tasks: [RSTask]
+  User: RSUser
+}
+
+type RSTask {
+  ID:         String
+	title:			 String
+	content:			String
+  is_completed: Boolean
+	created_at:		Time
+  updated_at:  Time
+}
